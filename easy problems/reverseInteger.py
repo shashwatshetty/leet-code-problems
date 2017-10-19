@@ -9,7 +9,6 @@ class Solution(object):
             xReverse = int(intStr[::-1])
         else:
             xReverse = int(intStr[:0:-1]) * -1
-            
         if xReverse <= -2**31 or xReverse >= 2**31:
             return 0
         else:
