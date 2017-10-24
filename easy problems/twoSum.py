@@ -1,3 +1,4 @@
+#Took 2 attempts!!
 class Solution(object):
     # Brute Force Method:
     def twoSum(self, nums, target):
