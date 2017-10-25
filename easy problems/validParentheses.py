@@ -11,7 +11,14 @@ class Solution(object):
                 brackets[b] += 1
             else:
                 brackets[b] -= 1
-        prod = 1
-        for val in brackets.values():
-            prod *= val
-        return prod == 0
+        flag = True
+        keys = brackets.keys()
+        for k in keys:
+            if k in '()':
+               flag = flag and (brackets['('] == brackets [')'])
+            elif k in '[]':
+                flag = flag and (brackets['['] == brackets [']'])
+            elif k in '{}':
+                flag = flag and (brackets['{'] == brackets ['}'])
+            print "Flag: ",flag," For k: ",k
+        return flag
