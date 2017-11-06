@@ -1,24 +1,23 @@
+# Took 2 attempts!
 class Solution(object):
     def isValid(self, s):
         """
         :type s: str
         :rtype: bool
         """
-        brackets = {'(':0, ')':0, '[':0, ']':0, '{':0, '}':0}
-        openPara = '([{'
-        for b in s:
-            if b in openPara:
-                brackets[b] += 1
+        parenth = {'(':')', '{':'}','[':']'}
+        parenthStack = []
+        for p in s:
+            if p in parenth:
+                parenthStack.append(parenth[p])
             else:
-                brackets[b] -= 1
-        flag = True
-        keys = brackets.keys()
-        for k in keys:
-            if k in '()':
-               flag = flag and (brackets['('] == brackets [')'])
-            elif k in '[]':
-                flag = flag and (brackets['['] == brackets [']'])
-            elif k in '{}':
-                flag = flag and (brackets['{'] == brackets ['}'])
-            print "Flag: ",flag," For k: ",k
-        return flag
+                if len(parenthStack) == 0:
+                    return False
+                else:
+                    bracket = parenthStack.pop()
+                    if bracket != p:
+                        return False
+        if len(parenthStack) != 0:
+            return False
+        else:
+            return True
