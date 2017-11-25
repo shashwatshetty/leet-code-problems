@@ -18,3 +18,4 @@ class Solution(object):
                 mArea = max(b*h,mArea)
         return mArea                                                      
             
+            
