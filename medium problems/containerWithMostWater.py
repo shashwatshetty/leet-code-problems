@@ -16,6 +16,4 @@ class Solution(object):
                 h = min(y1, y2)
                 b = abs(x1 - x2)
                 mArea = max(b*h,mArea)
-        return mArea                                                      
-            
-            
+        return mArea
