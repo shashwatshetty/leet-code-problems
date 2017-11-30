@@ -1,20 +1,4 @@
-class Solution(object):
-    def isPalindrome(self, x):
-        """
-        :type x: str
-        :rtype: bool
-        """
-        if len(x) <= 1:
-            return True
-        i = 0
-        j = len(x) - 1
-        while i <= len(x)/2:
-            if x[i] != x[j]:
-                return False
-            i+=1
-            j-=1
-        return True
-        
+class Solution(object):        
     def longestPalindrome(self, s):
         """
         :type s: str
@@ -29,8 +13,7 @@ class Solution(object):
             while start + diff <= len(s):
                 end = start + diff
                 subStr = s[start:end]
-                if Solution().isPalindrome(subStr):
+                if subStr == subStr[::-1]:
                     return subStr
                 start += 1
             diff -= 1
-            
