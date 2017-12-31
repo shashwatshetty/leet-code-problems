@@ -4,6 +4,7 @@ class ListNode(object):
         self.val = x
         self.next = None
 
+# Took 3 attempts!!
 class Solution(object):
     # Method not able to handle certain test cases.
     '''
