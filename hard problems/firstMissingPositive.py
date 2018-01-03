@@ -1,5 +1,7 @@
-#Took 2 attempts. Certain test cases to be handled.
+#Took 3 attempts!!
 class Solution(object):
+    # method not handling duplicates
+    '''
     def firstMissingPositive(self, nums):
         """
         :type nums: List[int]
@@ -7,14 +9,23 @@ class Solution(object):
         """
         nums.sort()
         pos = 1
-        i = 0
-        while i < len(nums) - 1:
-            if nums[i] > 0:
-                if nums[i] != pos:
+        for i in nums:
+            if i > 0:
+                if i != pos:
                     return pos
-                if nums[i] != nums[i + 1]:
-                    pos += 1
-            i += 1
-        if i == len(nums) - 1:
-            return pos + 1
+                pos += 1
         return pos
+    '''
+
+    # simplest solution!!!!!
+    def firstMissingPositive(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        posNum = 1
+        while True:
+            if posNum not in nums:
+                return posNum
+            else:
+                posNum += 1
