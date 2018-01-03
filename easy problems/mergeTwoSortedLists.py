@@ -6,8 +6,7 @@ class ListNode(object):
 
 # Took 3 attempts!!
 class Solution(object):
-    # Method not able to handle certain test cases.
-    '''
+    # Faster Method with one pass.
     def mergeTwoLists(self, l1, l2):
         """
         :type l1: ListNode
@@ -16,6 +15,10 @@ class Solution(object):
         """
         if l1 is None and l2 is None:
             return None
+        elif l1 is None:
+            return l2
+        elif l2 is None:
+            return l1
         head = None
         count = 0
         prev = None
@@ -39,9 +42,9 @@ class Solution(object):
             prev = new
             count += 1
         return head
-    '''
 
     # Cruder Method requiring 2 passes.
+    '''
     def mergeTwoLists(self, l1, l2):
         """
         :type l1: ListNode
@@ -70,6 +73,7 @@ class Solution(object):
             new.next = next
             next = new
         return next
+    '''
 
 # Test Cases Data
 '''
