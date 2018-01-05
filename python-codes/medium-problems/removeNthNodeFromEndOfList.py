@@ -6,6 +6,25 @@ class ListNode(object):
 
 #Took 2 attempts!
 class Solution(object):
+
+    def removeNthFromEnd(self, head, n):
+        """
+        :type head: ListNode
+        :type n: int
+        :rtype: ListNode
+        """
+        slow = head
+        fast = head
+        count = 0
+        while fast is not None:
+            if count != n:
+                count += 1
+            else:
+                slow = slow.next
+            fast = fast.next
+        return slow
+
+    '''    
     def removeNthFromEnd(self, head, n):
         """
         :type head: ListNode
@@ -23,10 +42,10 @@ class Solution(object):
         toRemove = nodes[remove]
         nodes[remove - 1].next = toRemove.next
         return nodes[0]
-
+    '''
 
 # Test Cases Data
-'''
+
 a = ListNode(1)
 b = ListNode(2)
 c = ListNode(3)
@@ -38,4 +57,3 @@ b.next = c
 c.next = m
 m.next = n
 n.next = o
-'''
