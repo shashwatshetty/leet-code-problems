@@ -1,3 +1,4 @@
+#Took 2 attempts!!
 class Solution(object):
     def countAndSay(self, n):
         """
@@ -23,6 +24,5 @@ class Solution(object):
                     count += 1
                 i += 1
             seq = new
-            #print seq
             line += 1
         return seq
