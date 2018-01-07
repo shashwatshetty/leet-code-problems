@@ -5,14 +5,22 @@ class Solution(object):
         :rtype: str
         """
         seq = '1'
-        count = 1
-        while count < n:
-            done = []
-            newSeq = ''
-            for c in seq:
-                if c not in done:
-                    newSeq += (str(seq.count(c)) + c)
-                    done.append(c)
-            seq = newSeq
-            count += 1
+        line = 1
+        while line < n:
+            if len(seq) == 1:
+                new = '11'
+            new = ''
+            i = 1
+            current = seq[0]
+            count = 1
+            while i < len(seq):
+                if seq[i] != current:
+                    new += (str(count) + current)
+                    current = seq[i]
+                    count = 1
+                else:
+                    count += 1
+            seq = new
+            print seq
+            l += 1
         return seq
