@@ -6,25 +6,35 @@ class ListNode(object):
 
 #Took 2 attempts!
 class Solution(object):
-
+    # Space Complexity: O(1)
+    # Fast Pointer Slow Pointer method
     def removeNthFromEnd(self, head, n):
         """
         :type head: ListNode
         :type n: int
         :rtype: ListNode
         """
+        if head is None or head.next is None:
+            return None
         slow = head
         fast = head
         count = 0
+        prev = head
         while fast is not None:
-            if count != n:
+            if count < n:
                 count += 1
             else:
+                prev = slow
                 slow = slow.next
             fast = fast.next
-        return slow
+        if slow != head:
+            prev.next = slow.next
+            return head
+        else:
+            return head.next
 
-    '''    
+    '''   
+    # Space Complexity: O(n) 
     def removeNthFromEnd(self, head, n):
         """
         :type head: ListNode
@@ -45,7 +55,7 @@ class Solution(object):
     '''
 
 # Test Cases Data
-
+'''
 a = ListNode(1)
 b = ListNode(2)
 c = ListNode(3)
@@ -57,5 +67,4 @@ b.next = c
 c.next = m
 m.next = n
 n.next = o
-
-
+'''
