@@ -1,4 +1,26 @@
 class Solution(object):
+    def threeSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        sol = []
+        i = 0
+        while i < len(nums) - 1:
+            other = {}
+            j = i + 1
+            while j < len(nums):
+                index = (i,j)
+                three = -1 * (nums[i] + nums[j])
+                if index in other:
+                    sol.append([three] + other[three])
+                else:
+                    other[three] = [nums[i], nums[j]]
+                j += 1
+            i += 1
+        return sol
+
+
     # brute force method : TLE
     '''
     def threeSum(self, nums):
@@ -22,6 +44,7 @@ class Solution(object):
     '''
 
     # Divide & Conquer method : TLE
+    '''
     def threeSum(self, nums):
         """
         :type nums: List[int]
@@ -66,6 +89,7 @@ class Solution(object):
                 if sum in neg and [sum, pos[i], pos[j]] not in sol:
                     sol.append([sum, pos[i], pos[j]])
         return sol
+        '''
 
 # running program runtime tests
 # import time
