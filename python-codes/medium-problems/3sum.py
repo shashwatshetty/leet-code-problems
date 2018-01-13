@@ -1,24 +1,31 @@
+#Took 5 attempts!!
 class Solution(object):
+    # Method using Sets and Dictionaryn: TLE
+    #Time Complexity: O(n**2)
     def threeSum(self, nums):
         """
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-        sol = []
+        sol = set()
         i = 0
+        nums.sort()
         while i < len(nums) - 1:
             other = {}
             j = i + 1
+            target = -1 * nums[i]
             while j < len(nums):
-                index = (i,j)
-                three = -1 * (nums[i] + nums[j])
-                if index in other:
-                    sol.append([three] + other[three])
+                if nums[j] in other:
+                    sol.add((nums[i],nums[j],other[nums[j]]))
                 else:
-                    other[three] = [nums[i], nums[j]]
+                    twoSum = target - nums[j]
+                    other[twoSum] = nums[j]
                 j += 1
             i += 1
-        return sol
+        ans = []
+        for triplet in sol:
+            ans.append(list(triplet))
+        return ans
 
 
     # brute force method : TLE
@@ -43,7 +50,8 @@ class Solution(object):
         return sol
     '''
 
-    # Divide & Conquer method : TLE
+    # Dividing the input into different cases : TLE
+    #Time Complexity: O(n**3)
     '''
     def threeSum(self, nums):
         """
@@ -89,13 +97,15 @@ class Solution(object):
                 if sum in neg and [sum, pos[i], pos[j]] not in sol:
                     sol.append([sum, pos[i], pos[j]])
         return sol
-        '''
+    '''
 
 # running program runtime tests
-# import time
-# import random
-# start = time.time()
-# #ip = random.sample(range(-200,200), 150)
-# print Solution().threeSum(ip)
-# print "Total Time: ",(time.time() - start)
-# print ip
+'''
+import time
+import random
+start = time.time()
+ip = random.sample(range(-200,200), 150)
+print Solution().threeSum(ip)
+print "Total Time: ",(time.time() - start)
+print ip
+'''
