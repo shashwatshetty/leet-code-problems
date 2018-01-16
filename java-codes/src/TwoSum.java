@@ -2,7 +2,7 @@ import java.util.HashMap;
 // Main method for running tests.
 public class TwoSum {
     public static void main(String args[]){
-        Solution obj = new Solution();
+        TwoSumSolution obj = new TwoSumSolution();
         int[] test1 = {2, 7, 11, 15};
         int[] answer = obj.twoSum(test1, 8);
         for(int ele : answer){
@@ -11,7 +11,7 @@ public class TwoSum {
     }
 }
 
-class Solution {
+class TwoSumSolution {
     /*
     Time Complexity:  O(n)
     Space Complexity: O(n)
