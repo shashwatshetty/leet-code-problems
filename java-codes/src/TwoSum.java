@@ -13,21 +13,23 @@ public class TwoSum {
 
 class TwoSumSolution {
     /*
-    Time Complexity:  O(n)
-    Space Complexity: O(n)
+    Basic idea is, to store the compliment of the number and the target as a key in the
+    Hash Map and see if that compliment exists in the array later. The value for the compliments
+    will be the index of the other half of the summation in the array.
      */
     public int[] twoSum(int[] nums, int target) {
-        HashMap<Integer, Integer> otherValue = new HashMap<Integer, Integer>();
+        HashMap<Integer, Integer> otherValue = new HashMap<Integer, Integer>();     // sstores the other half of the summation
         int i = 0;
-        int[] result = new int[2];
+        int[] result = new int[2];  // result array
         while(i < nums.length){
+            // if the number exists in the map, means the compliment with the target also exists
             if(otherValue.containsKey(nums[i])){
                 result[0] = otherValue.get(nums[i]);
                 result[1] = i;
                 return result;
             }else{
-                int sub = target - nums[i];
-                otherValue.put(sub, i);
+                int sub = target - nums[i];     // store the compliment as key
+                otherValue.put(sub, i);         // with the index as its value
             }
             i++;
         }
