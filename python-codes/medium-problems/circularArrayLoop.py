@@ -37,7 +37,6 @@ class Solution(object):
         if length < 2:
             return False
         indx = 0
-        isForward = Solution().isPositive(nums[indx])
         while True:
             next = Solution().updateIndex(indx, nums)
             if indx == next:
@@ -62,7 +61,7 @@ class Solution(object):
 
     def isPositive(self,num):
         """
-        :param num: int
-        :return: bool
+
+        :param num:
+        :return:
         """
-        return num > 0
