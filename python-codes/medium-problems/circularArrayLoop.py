@@ -1,4 +1,7 @@
 class Solution(object):
+
+
+    # Method fails for arrays with similar valued elements
     '''
     def circularArrayLoop(self, nums):
         """
@@ -22,6 +25,9 @@ class Solution(object):
         return True
     '''
 
+
+    # Method doesn't check for more than one element needs to be in the path of the loop.
+
     def circularArrayLoop(self, nums):
         """
         :type nums: List[int]
@@ -30,22 +36,17 @@ class Solution(object):
         length = len(nums)
         if length < 2:
             return False
+        indx = 0
+        isForward = Solution().isPositive(nums[indx])
         while True:
-            slow = 0
-            fast = 0
-            tempSlow = (slow + nums[slow])
-            if tempSlow < 0:
-                tempSlow = length - tempSlow
-            else:
-                tempSlow = tempSlow % length
-            tempFast = (fast + nums[fast]) % length
-            tempFast = (tempFast + nums[tempFast]) % length
-            if tempSlow == slow or tempFast == fast:
+            next = Solution().updateIndex(indx, nums)
+            if indx == next:
                 return False
-            elif tempSlow == tempFast:
+            if nums[next] == 0:
                 return True
-            slow = tempSlow
-            fast = tempFast
+            nums[indx] = 0
+            indx = next
+
 
     def updateIndex(self, index, nums):
         """
@@ -55,6 +56,13 @@ class Solution(object):
         """
         temp = index + nums[index]
         if temp < 0:
-            return len(nums) + temp
+            return len(nums) - (-temp % len(nums))
         else:
             return temp % len(nums)
+
+    def isPositive(self,num):
+        """
+        :param num: int
+        :return: bool
+        """
+        return num > 0
