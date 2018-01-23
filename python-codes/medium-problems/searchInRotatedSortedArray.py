@@ -1,5 +1,36 @@
 #Took 2 attempts
 class Solution(object):
+    # Method discussed with Harsha, fails for lowest number as target.
+    '''
+    def search(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        if len(nums) < 1:
+            return -1
+        low = 0
+        high = len(nums) - 1
+        while low <= high:
+            mid = (low + high)/2
+            if nums[mid] == target:
+                return mid
+            if nums[mid + 1] > nums[mid]:
+                if nums[high] < target:
+                    high = mid - 1
+                else:
+                    low = mid + 1
+            else:
+                if nums[low] > target:
+                    high = mid - 1
+                else:
+                    low = mid + 1
+        return -1
+    '''
+
+    # Method fails for certain test cases.
+    '''
     def search(self, nums, target):
         """
         :type nums: List[int]
@@ -36,3 +67,4 @@ class Solution(object):
             elif target > nums[mid]:
                 low = mid + 1
         return -1
+    '''
