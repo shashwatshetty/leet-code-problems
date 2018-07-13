@@ -1,3 +1,5 @@
+package easyproblems;
+
 // Took 2 attempts
 // Time Taken To Solve: 25 mins
 class BSSIISolution {

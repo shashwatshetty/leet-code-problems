@@ -1,3 +1,5 @@
+package hardproblems;
+
 // Referred The Solution
 // Time Taken To Solve: 97 mins
 class FirstMissingPositiveSolution {

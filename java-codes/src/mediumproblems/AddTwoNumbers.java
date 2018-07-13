@@ -1,3 +1,4 @@
+package mediumproblems;
 
 // Definition for singly-linked list.
 class ListNode {
@@ -14,7 +15,7 @@ class AddTwoNumbersSolution {
     or right to left, to get the result, only maintaining the carry is important.
      */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode start = new ListNode(0);       // start with a temporary ListNode
+        ListNode start = new ListNode(0);       // start with a temporary mediumproblems.ListNode
         ListNode head = start;                     // used to store the head of the list
         int carry = 0;                             // used to store any carry
         // first two conditions are to check if the list is empty or no

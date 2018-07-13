@@ -1,3 +1,5 @@
+package easyproblems;
+
 import java.util.HashMap;
 // Main method for running tests.
 public class TwoSum {
