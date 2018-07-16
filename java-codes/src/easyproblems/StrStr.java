@@ -1,3 +1,7 @@
+package easyproblems;
+
+// Took 1 attempt
+// Time Taken To Solve: 51 mins
 class StrStrSolution {
     public int strStr(String haystack, String needle) {
     	if(needle.equals("")){
@@ -26,7 +30,7 @@ class StrStrSolution {
 public class StrStr{
 	public static void main(String args[]){
 		String s1 = "hello";
-		String s2 =  "how";
+		String s2 =  "howrewtr";
 		StrStrSolution obj = new StrStrSolution();
 		System.out.println(obj.strStr(s1, s2));
 	}
