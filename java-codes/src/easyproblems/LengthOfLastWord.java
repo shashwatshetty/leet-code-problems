@@ -1,9 +1,10 @@
-package easyproblems;
+//package easyproblems;
 
 // Took 2 attmepts
 // Time Taken To Solve: 20 mins
 class LengthOfLastWordSolution {
-	public int lengthOfLastWord(String s){
+	// logic uses traverse the string
+	/*public int lengthOfLastWord(String s){
     	if(s == null){
     		return 0;
     	}
@@ -18,10 +19,13 @@ class LengthOfLastWordSolution {
         	len--;
         }
         return count;
-    }
+    }*/
     
-    /*
+    // logic uses String methods
     public int lengthOfLastWord(String s){
+    	if(s == null){
+    		return 0;
+    	}
     	s = s.trim();
     	String[] words = s.split(" ");
     	int n = words.length - 1;
@@ -31,12 +35,11 @@ class LengthOfLastWordSolution {
     		return words[n].length();
     	}
     }
-    */
 }
 
 public class LengthOfLastWord{
 	public static void main(String args[]){
-		String n = "hello    ";
+		String n = "    hello    ";
 		LengthOfLastWordSolution obj = new LengthOfLastWordSolution();
 		System.out.println(obj.lengthOfLastWord(n));
 	}
