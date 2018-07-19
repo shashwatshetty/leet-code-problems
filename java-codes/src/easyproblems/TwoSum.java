@@ -35,6 +35,6 @@ class TwoSumSolution {
             }
             i++;
         }
-        return null;
+        return new int[0];
     }
 }
