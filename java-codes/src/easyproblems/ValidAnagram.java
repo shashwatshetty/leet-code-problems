@@ -1,11 +1,13 @@
 package easyproblems;
 
 import java.util.HashMap;
+import java.util.Arrays;
 
 // Took 2 attempts
 // Time Taken To Solve: 27 mins
 class ValidAnagramSolution {
-	public boolean isAnagram(String s, String t) {
+	/*
+    public boolean isAnagram(String s, String t) {
     	if(s == null || t == null || s.length() != t.length()){
     		return false;
     	}
@@ -33,6 +35,19 @@ class ValidAnagramSolution {
         	}
         }
         return true;
+    }
+    */
+
+    // Faster Method
+    public boolean isAnagram(String s, String t) {
+        if(s == null || t == null || s.length() != t.length()){
+            return false;
+        }
+        char[] sc = s.toCharArray();
+        char[] tc = t.toCharArray();
+        Arrays.sort(sc);
+        Arrays.sort(tc);
+        return String.valueOf(sc).equals(String.valueOf(tc));
     }
 
 }
