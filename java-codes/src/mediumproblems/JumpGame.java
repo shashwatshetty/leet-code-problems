@@ -1,3 +1,5 @@
+package mediumproblems;
+
 // Took 4 attempts Before Referring Solution
 // Took 2 attempts After Referring Solution
 // Time Taken To Solve: 117 mins

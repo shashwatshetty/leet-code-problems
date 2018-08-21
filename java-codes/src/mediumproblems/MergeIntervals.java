@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 // Took 4 attempts
 // Time Taken To Solve: 60 mins
-
 class Interval {
 	int start;
 	int end;
