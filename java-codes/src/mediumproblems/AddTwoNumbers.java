@@ -9,6 +9,8 @@ class ListNode {
     }
 }
 
+// Re-Done in 1 attempt
+// Time Taken: 50 mins
 class AddTwoNumbersSolution {
     /*
     Basic idea is, that we can add two numbers in any order i.e. left to right
@@ -34,6 +36,36 @@ class AddTwoNumbersSolution {
             start = start.next;
         }
         return head.next;       // move to the next since temp has leading 0
+    }
+
+    public ListNode addTwoNumbersREDO(ListNode l1, ListNode l2) {
+        ListNode prev = null, head = null;
+        int carry = 0, add = 0;
+        while(l1 != null || l2 != null || carry != 0) {
+            if(l1 != null && l2 != null) {
+                add = l1.val + l2.val + carry;
+                l1 = l1.next;
+                l2 = l2.next;
+            }else if(l1 != null) {
+                add = l1.val + carry;
+                l1 = l1.next;
+            }else if(l2 != null){
+                add = l2.val + carry;
+                l2 = l2.next;
+            }else {
+                add = carry;
+            }
+            ListNode x = new ListNode(add % 10);
+            carry = add / 10;
+            if(head == null) {
+                head = x;
+                prev = head;
+            }else {
+                prev.next = x;
+                prev = x;
+            }
+        }
+        return head;
     }
 }
 
