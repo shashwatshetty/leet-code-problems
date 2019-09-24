@@ -2,6 +2,9 @@ package easyproblems;
 
 // Took 1 attempt
 // Time Taken To Solve: 11 mins
+
+// Re-Done in 1 attempt
+// Time Taken: 8 mins
 class MiddleOfLinkedListSolution {
     public ListNode middleNode(ListNode head) {
     	if(head == null){
@@ -14,6 +17,18 @@ class MiddleOfLinkedListSolution {
         }
         return slow;
     }
+
+	public ListNode middleNodeREDO(ListNode head) {
+		if (head == null || head.next == null) {
+			return head;
+		}
+		ListNode fast = head, slow = head;
+		while (fast != null && fast.next != null) {
+			fast = fast.next.next;
+			slow = slow.next;
+		}
+		return slow;
+	}
 }
 
 public class MiddleOfLinkedList{
